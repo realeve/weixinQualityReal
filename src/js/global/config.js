@@ -30,15 +30,15 @@ var exam = {
 	maxAnswerNum: num, //最大抽取多少道题目
 	answerTimes: 0, //每个用户最多回答几次
 	examPaper: "quality2", //试卷文件
-	sportDate: "9月12日",
-	sportid: SPORT.QUALITY2,
+	sportDate: "10月26日",
+	sportid: SPORT.QUALITYONLINE,
 	editAnswer: allowEdit, //允许修改答案
 	curID: 0, //当前答题数
 	realMatch: realTime, //实时提交分数，用于比赛中用户成绩获取
 	showTips: false,
 	lastPage: 0,
 	secColor: [],
-	debug:false//无网络测试模式
+	debug: false //无网络测试模式
 };
 
 module.exports = exam;

@@ -62,8 +62,8 @@
 		}
 		return arr.sort(randomsort);
 	}
-	
-	function isPaperHide(idx,exam) {
+
+	function isPaperHide(idx, exam, sid) {
 		var key = exam.examPaper + '_errlist_' + sid;
 		var errList = localStorage.getItem(key);
 		if (errList == null) {
@@ -79,9 +79,9 @@
 			return isFind;
 		}
 	}
-		
-	module.exports ={
-		getUrlParam:getUrlParam,
-		getExamTemplateByObj:getExamTemplateByObj,
-		isPaperHide:isPaperHide
+
+	module.exports = {
+		getUrlParam: getUrlParam,
+		getExamTemplateByObj: getExamTemplateByObj,
+		isPaperHide: isPaperHide
 	}

@@ -17,14 +17,15 @@ initDom();
 var exam = require('./global/config.js');
 var WINDOWTITLE = require('./global/windowtitle.js');
 var PAPER = require('./global/paper.js');
-var util = require('./exam/errorFunc.js');
-var uid = util.getUrlParam('uid');
-var sid = util.getUrlParam('sid');
-
 if (sid != null) {
 	exam.examPaper = PAPER[sid];
 	document.title = WINDOWTITLE[sid];
 }
+exam.hideNum = 0;
+var util = require('./exam/errorFunc.js');
+var uid = util.getUrlParam('uid');
+var sid = util.getUrlParam('sid');
+
 
 var app = function() {
 	var rendPaper = function() {
@@ -76,9 +77,9 @@ var app = function() {
 		if (uid == -1) { //显示所有题库
 			//question.length
 			//管3答题 显示前200道
-			for (i = 0; i < 200; i++) {
+			for (i = 0; i < exam.maxAnswerNum; i++) {
 				//console.log(question[exam.myError[i]]);
-				if (!util.isPaperHide(i)) {
+				if (!util.isPaperHide(i, exam, sid)) {
 					$('#fullpage').append(util.getExamTemplateByObj(question[i], 0, i + 1));
 				}
 			}

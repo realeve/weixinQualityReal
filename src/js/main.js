@@ -2,7 +2,7 @@
 require('./vendors/jquery.fullPage.js');
 require('./vendors/jquery-weui.js');
 //var $ = require('jquery');
-require('./vendors/g2/effective.js');
+//require('./vendors/g2/effective.js');
 require('./vendors/fakeLoader.js/fakeLoader.js');
 var exam = require('./global/config.js');
 
