@@ -27,6 +27,7 @@ var webpackConfig = {
 	entry: {
 		index: "./index.js",
 		online: "./online.js",
+		online2: "./online2.js",
 		error: "./error.js",
 		score: "./score.js"
 	},
