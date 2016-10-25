@@ -1,13 +1,44 @@
+var dptShorten = {
+	"董事会、经理部": "经理部",
+	"办公室": "办公室",
+	"企管规划部": "企划",
+	"计划财务部": "计财",
+	"生产管理部": "生产",
+	"技术质量部": "技质",
+	"安全保卫部": "安保",
+	"设备管理部": "设备",
+	"物资管理部": "物资",
+	"技术中心": "技术中心",
+	"基建与行政事务部": "基建",
+	"人力资源部": "人力",
+	"企业文化部": "宣传",
+	"纪检监察内审部": "纪检",
+	"群工部": "群工",
+	"离退休工作部": "离退休",
+	"印钞数管部": "数管",
+	"胶凹制作部": "胶凹",
+	"印码制作部": "印码",
+	"检封制作部": "检封",
+	"钞纸制作部": "钞纸",
+	"钞纸成品制作部": "成品",
+	"造币制作部": "造币",
+	"能源环保部": "能源",
+	"市场开发部": "市场",
+	"采购管理部": "采购",
+	"长城公司": "长城",
+	"金鼎公司": "金鼎",
+	"物业公司": "物业"
+};
+
 function handleBarData(obj, gb, i) {
 	var scoreOrder = {
 		xAxis: [],
 		yAxis: []
 	};
 
-	obj.map(function(userInfo, i) {
-		scoreOrder.yAxis[i] = userInfo.name + ' (' + userInfo.user_dpt + ') ';
-		scoreOrder.xAxis[i] = userInfo.value;
-
+	obj.map(function(userInfo, j) {
+		scoreOrder.yAxis[j] = (j + 1) + '.' + userInfo.name + ' (' + dptShorten[userInfo.user_dpt] + ') ';
+		scoreOrder.xAxis[j] = userInfo.value;
 	});
 
 	gb.option.xAxis[i].min = scoreOrder.xAxis[obj.length - 1] - 10;
@@ -15,6 +46,7 @@ function handleBarData(obj, gb, i) {
 	gb.option.yAxis[i].data = scoreOrder.yAxis.reverse();
 	gb.myChart[0].setOption(gb.option);
 }
+
 
 module.exports = {
 	realScore: function(gb) { //所有人员得分排名

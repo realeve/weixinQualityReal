@@ -27,18 +27,12 @@ module.exports = function() {
 			itemStyle: {
 				normal: {
 					//opacity:0.9,
-					color: new echarts.graphic.LinearGradient(0, 0, 1, 1, [{
-						offset: 0,
-						color: 'rgba(60, 174, 65,1)'
-					}, {
-						offset: 1,
-						color: 'rgb(25,183, 177)'
-					}]),
+					color: i ? '#61a5e8' : '#7ECF51',
 					//color: color[i+6],
 					label: {
 						show: true,
 						textStyle: {
-							fontSize: 18,
+							fontSize: 15,
 							color: '#fff',
 							fontFamily: fontFamily
 						},
@@ -80,7 +74,7 @@ module.exports = function() {
 				interval: 0,
 				textStyle: {
 					color: '#ddd',
-					fontSize: 18,
+					fontSize: 15,
 					fontFamily: fontFamily
 				}
 			},
